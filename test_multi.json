@@ -1,0 +1,6 @@
+[
+  {"label": "Q1", "revenue": 120, "costs": 80, "profit": 40},
+  {"label": "Q2", "revenue": 150, "costs": 90, "profit": 60},
+  {"label": "Q3", "revenue": 180, "costs": 100, "profit": 80},
+  {"label": "Q4", "revenue": 200, "costs": 110, "profit": 90}
+]
