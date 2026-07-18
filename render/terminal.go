@@ -46,6 +46,7 @@ var terminalColors = []string{
 	"\033[38;5;149m", // lime
 	"\033[38;5;209m", // salmon
 }
+
 const resetColor = "\033[0m"
 
 // RenderTerminal renders chart as Unicode block art for terminal display.

@@ -40,7 +40,7 @@ func renderBarSVG(series []chart.Series, cfg chart.ChartConfig) string {
 
 	data := series[0].Points
 	padding := SVGPadding{Top: 40, Right: 20, Bottom: 60, Left: 60}
-	width := cfg.Width * 8  // scale up for SVG
+	width := cfg.Width * 8 // scale up for SVG
 	height := cfg.Height * 12
 
 	chartW := width - padding.Left - padding.Right
@@ -274,8 +274,8 @@ func renderPieSVG(series []chart.Series, cfg chart.ChartConfig) string {
 
 	// Pie chart
 	cx := float64(width) / 2
-	cy := float64(height) / 2 + 10
-	radius := math.Min(float64(width), float64(height)) / 2 - 60
+	cy := float64(height)/2 + 10
+	radius := math.Min(float64(width), float64(height))/2 - 60
 
 	startAngle := -math.Pi / 2
 	for i, p := range data {
@@ -353,14 +353,26 @@ func renderScatterSVG(series []chart.Series, cfg chart.ChartConfig) string {
 	for _, s := range series {
 		for i, p := range s.Points {
 			x := float64(i)
-			if x < minX { minX = x }
-			if x > maxX { maxX = x }
-			if p.Value < minY { minY = p.Value }
-			if p.Value > maxY { maxY = p.Value }
+			if x < minX {
+				minX = x
+			}
+			if x > maxX {
+				maxX = x
+			}
+			if p.Value < minY {
+				minY = p.Value
+			}
+			if p.Value > maxY {
+				maxY = p.Value
+			}
 		}
 	}
-	if minX == maxX { maxX = minX + 1 }
-	if minY == maxY { maxY = minY + 1 }
+	if minX == maxX {
+		maxX = minX + 1
+	}
+	if minY == maxY {
+		maxY = minY + 1
+	}
 
 	var sb strings.Builder
 	sb.WriteString(fmt.Sprintf(`<svg xmlns="http://www.w3.org/2000/svg" width="%d" height="%d" viewBox="0 0 %d %d">`, width, height, width, height))

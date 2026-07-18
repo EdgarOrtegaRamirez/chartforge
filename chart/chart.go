@@ -31,18 +31,18 @@ type Series struct {
 
 // ChartConfig holds configuration for chart generation.
 type ChartConfig struct {
-	Type        ChartType
-	Title       string
-	Width       int
-	Height      int
-	Colors      []string
-	ShowLegend  bool
-	ShowGrid    bool
-	ShowValues  bool
-	LabelX      string
-	LabelY      string
-	BinCount    int // for histogram
-	Precision   int // decimal precision for value labels
+	Type       ChartType
+	Title      string
+	Width      int
+	Height     int
+	Colors     []string
+	ShowLegend bool
+	ShowGrid   bool
+	ShowValues bool
+	LabelX     string
+	LabelY     string
+	BinCount   int // for histogram
+	Precision  int // decimal precision for value labels
 }
 
 // DefaultConfig returns a ChartConfig with sensible defaults.
